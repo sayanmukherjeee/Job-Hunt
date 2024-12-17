@@ -1,0 +1,19 @@
+{
+    "projects": [
+      {
+        "src": "frontend/",
+        "name": "frontend",
+        "buildCommand": "npm run build",
+        "outputDirectory": "build",
+        "framework": "react" 
+      },
+      {
+        "src": "backend/",
+        "name": "backend",
+        "buildCommand": "npm install",
+        "outputDirectory": ".",
+        "framework": null
+      }
+    ]
+  }
+  
