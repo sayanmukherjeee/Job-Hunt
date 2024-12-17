@@ -10,6 +10,8 @@
     "preview": "vite preview",
     "build:css": "tailwindcss -i src/index.css -o dist/index.css"
   },
+
+  
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.2",
