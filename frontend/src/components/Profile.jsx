@@ -10,7 +10,6 @@ import UpdateProfileDialog from './UpdateProfileDialog';
 import { useSelector } from 'react-redux';
 import useGetAppliedJobs from '@/hooks/useGetAppliedJobs';
 
-// const skills = ["Html", "Css", "Javascript", "Reactjs"]
 const isResume = true;
 
 const Profile = () => {
@@ -21,6 +20,7 @@ const Profile = () => {
     return (
         <div>
             <Navbar />
+            {/* Main Profile Card */}
             <div className="max-w-4xl mx-auto bg-white border border-gray-200 rounded-2xl my-5 p-8">
                 <div className="flex justify-between">
                     <div className="flex items-center gap-4">
@@ -43,6 +43,8 @@ const Profile = () => {
                         <Pen />
                     </Button>
                 </div>
+
+                {/* Contact Information */}
                 <div className="my-5">
                     <div className="flex items-center gap-3 my-2">
                         <Mail />
@@ -53,18 +55,27 @@ const Profile = () => {
                         <span>{user?.phoneNumber}</span>
                     </div>
                 </div>
+
+                {/* Skills Section */}
                 <div className="my-5">
                     <h1>Skills</h1>
-                    <div className="flex items-center gap-1">
+                    <div className="flex flex-wrap items-center gap-2">
                         {user?.profile?.skills.length !== 0 ? (
                             user?.profile?.skills.map((item, index) => (
-                                <Badge key={index}>{item}</Badge>
+                                <Badge
+                                    key={index}
+                                    className="text-sm px-2 py-1"
+                                >
+                                    {item}
+                                </Badge>
                             ))
                         ) : (
                             <span>NA</span>
                         )}
                     </div>
                 </div>
+
+                {/* Resume Section */}
                 <div className="grid w-full max-w-sm items-center gap-1.5">
                     <Label className="text-md font-bold">Resume</Label>
                     {isResume ? (
@@ -80,13 +91,16 @@ const Profile = () => {
                     )}
                 </div>
             </div>
+
+            {/* Applied Jobs Table */}
             <div className="max-w-4xl mx-auto bg-white rounded-2xl px-4 sm:px-8">
                 <h1 className="font-bold text-lg my-5 sm:text-left text-start pl-2 sm:pl-0">
                     Applied Jobs
                 </h1>
-                {/* Applied Job Table */}
                 <AppliedJobTable />
             </div>
+
+            {/* Update Profile Dialog */}
             <UpdateProfileDialog open={open} setOpen={setOpen} />
         </div>
     );
