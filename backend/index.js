@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 const corsOptions = {
-    origin:'http://localhost:5173',
+    origin:'https://job-hunt-mgvf-xuevt8xzf-sayan-mukherjees-projects-a93ddbb1.vercel.app',
     credentials:true
 }
 
