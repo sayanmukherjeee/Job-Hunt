@@ -20,7 +20,7 @@ app.use(cookieParser());
 // Configure CORS
 const corsOptions = {
   origin: process.env.NODE_ENV === "production" 
-    ? "https://job-hunt-frontend-owrd.onrender.com" // Production frontend URL
+    ? "https://job-hunt-frontend-lac.vercel.app/" // Production frontend URL
     : "http://localhost:5173", // Local development URL (Vite default)
   credentials: true,  // Allow cookies to be sent with requests
 };
